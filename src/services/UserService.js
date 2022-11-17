@@ -18,6 +18,4 @@ export default class UserService {
     return this.dao.save(user);
 
   }
-
-
 }
