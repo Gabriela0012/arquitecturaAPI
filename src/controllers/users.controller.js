@@ -1,9 +1,11 @@
 import { usersService } from "../services/index.js";
+import UserDTO from '../DTOs/userDTO.js'
 
 
 const getUsers = async (req, res) => {
-  let users = await usersService.getUsers();
-
+  let result = await usersService.getUsers();
+  const users = result.map(user=> new UserDTO(user))
+  console.log(users)
   res.send({status:"success", payload:users});
 
 }

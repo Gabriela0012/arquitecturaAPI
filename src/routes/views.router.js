@@ -4,7 +4,7 @@ import {publicValidation, privateValidation} from '../middlewares/auth.js'
 
 const router = Router()
 
-router.get('/',privateValidation, viewsController.home)
+router.get('/', viewsController.home)
 router.get('/register',publicValidation, viewsController.register)
 router.get('/login',publicValidation,viewsController.login)
 router.get('/loginfail', viewsController.loginfail)
